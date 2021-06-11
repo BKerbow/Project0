@@ -27,13 +27,13 @@ public class AccountRepository implements GenericRepository<Accounts>{
 	
 	@Override
 	public Accounts add(Accounts a) {
-		String sql = "insert into accounts values (default, ?, ?) returning *;";
+		String sql = "insert into accounts values (default, ?, ?, ?) returning *;";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setFloat(1, a.getBalance());
 			ps.setInt(2, a.getCustomer_id());
-			ps.setBoolean(2, a.isPending());
+			ps.setBoolean(3, a.isPending());
 			ResultSet rs = ps.executeQuery();
 			
 			if (rs.next()) {
@@ -141,7 +141,7 @@ public class AccountRepository implements GenericRepository<Accounts>{
 
 	@Override
 	public boolean update(Accounts a) {
-		String sql = "update accounts set balance = ? where id = ? returning *;";
+		String sql = "update accounts set balance = ?, pending = ? where id = ? returning *;";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);

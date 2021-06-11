@@ -24,7 +24,7 @@ import dev.kerbow.utils.JDBCConnection;
 public class CustomerRepoTest {
 	private static Savepoint sp;
 	private static Connection conn;
-	private Integer expectedId = 4;
+	private Integer expectedId = 5;
 	
 	@BeforeClass
 	public static void beforeClass() {
@@ -78,12 +78,20 @@ public class CustomerRepoTest {
 		Assert.assertEquals(expected, result);
 	}
 	
+	@Test
+	public void getEmployeesTest() {
+		List<Customers> expected = new ArrayList<Customers>();
+		expected.add(new Customers(1, "bennett", "manager", true));
+		List<Customers> result = CustomerRepository.getInstance().getEmployees();
+		Assert.assertEquals(expected, result);
+	}
+	
 	@After
 	public void after() {
 		try {
 			conn.rollback(sp);
 			conn.setAutoCommit(true);
-			String sql = String.format("alter sequence customers_ud_seq restart with %d;", expectedId);
+			String sql = String.format("alter sequence customers_id_seq restart with %d;", expectedId);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.executeUpdate();
 		}catch (SQLException e) {

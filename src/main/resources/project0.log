@@ -1,0 +1,55 @@
+INFO  | 2021-06-10 09:12:32 | [main] app.Driver (Driver.java:123) - Customer bennett logged in.
+INFO  | 2021-06-10 09:12:51 | [main] app.Driver (Driver.java:176) - Customer bennett logged out.
+INFO  | 2021-06-10 09:18:30 | [main] app.Driver (Driver.java:133) - Customer hussar has signed up.
+INFO  | 2021-06-10 09:20:32 | [main] app.Driver (Driver.java:133) - Customer hussar has signed up.
+INFO  | 2021-06-10 09:22:48 | [main] app.Driver (Driver.java:133) - Customer hussar has signed up.
+INFO  | 2021-06-10 09:23:17 | [main] app.Driver (Driver.java:133) - Customer wingedHussar has signed up.
+ERROR | 2021-06-10 09:23:55 | [main] app.Driver (Driver.java:47) - printAccounts: customer null
+INFO  | 2021-06-10 09:23:57 | [main] app.Driver (Driver.java:176) - Customer wingedHussar logged out.
+INFO  | 2021-06-10 09:24:04 | [main] app.Driver (Driver.java:123) - Customer bennett logged in.
+INFO  | 2021-06-10 09:27:46 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:28:11 | [main] app.Driver (Driver.java:179) - Customer wingedHussar logged out.
+INFO  | 2021-06-10 09:28:15 | [main] app.Driver (Driver.java:115) - Customer bennett logged in.
+INFO  | 2021-06-10 09:28:38 | [main] app.Driver (Driver.java:179) - Customer bennett logged out.
+INFO  | 2021-06-10 09:28:44 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:32:26 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:32:35 | [main] app.Driver (Driver.java:179) - Customer wingedHussar logged out.
+INFO  | 2021-06-10 09:32:40 | [main] app.Driver (Driver.java:115) - Customer bennett logged in.
+INFO  | 2021-06-10 09:34:25 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:34:29 | [main] app.Driver (Driver.java:179) - Customer wingedHussar logged out.
+INFO  | 2021-06-10 09:34:38 | [main] app.Driver (Driver.java:115) - Customer bennett logged in.
+INFO  | 2021-06-10 09:34:46 | [main] app.Driver (Driver.java:179) - Customer bennett logged out.
+INFO  | 2021-06-10 09:34:53 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:37:19 | [main] app.Driver (Driver.java:115) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 09:37:29 | [main] services.AccountServicesImpl (AccountServicesImpl.java:119) - Customer wingedHussar depositted $5000.00 into account 4.
+INFO  | 2021-06-10 09:37:44 | [main] services.AccountServicesImpl (AccountServicesImpl.java:85) - Customer wingedHussar withdrew $4000.00 from account 4.
+INFO  | 2021-06-10 09:45:37 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 09:45:47 | [main] app.Driver (Driver.java:173) - Customer bennett logged out.
+INFO  | 2021-06-10 11:56:14 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 11:56:15 | [main] app.Driver (Driver.java:173) - Customer bennett logged out.
+INFO  | 2021-06-10 12:11:04 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 12:30:42 | [main] app.Driver (Driver.java:119) - Customer BurgerKing has signed up.
+INFO  | 2021-06-10 12:31:40 | [main] app.Driver (Driver.java:109) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 12:31:56 | [main] app.Driver (Driver.java:173) - Customer wingedHussar logged out.
+INFO  | 2021-06-10 12:32:03 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 12:32:21 | [main] app.Driver (Driver.java:173) - Customer bennett logged out.
+INFO  | 2021-06-10 12:32:29 | [main] app.Driver (Driver.java:109) - Customer wingedHussar logged in.
+INFO  | 2021-06-10 12:32:41 | [main] services.AccountServicesImpl (AccountServicesImpl.java:85) - Customer wingedHussar withdrew $5000.00 from account 4.
+INFO  | 2021-06-10 12:32:49 | [main] services.AccountServicesImpl (AccountServicesImpl.java:119) - Customer wingedHussar depositted $5000.00 into account 4.
+INFO  | 2021-06-10 12:33:01 | [main] services.AccountServicesImpl (AccountServicesImpl.java:171) - Customer wingedHussar transferred $6000.00 from account 4 to account 5.
+INFO  | 2021-06-10 16:44:01 | [main] app.Driver (Driver.java:119) - Customer dan has signed up.
+INFO  | 2021-06-10 16:48:12 | [main] app.Driver (Driver.java:119) - Customer dan has signed up.
+INFO  | 2021-06-10 16:49:22 | [main] app.Driver (Driver.java:173) - Customer dan logged out.
+INFO  | 2021-06-10 16:49:30 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 16:49:39 | [main] app.Driver (Driver.java:173) - Customer bennett logged out.
+INFO  | 2021-06-10 16:49:46 | [main] app.Driver (Driver.java:109) - Customer dan logged in.
+INFO  | 2021-06-10 16:49:55 | [main] app.Driver (Driver.java:173) - Customer dan logged out.
+INFO  | 2021-06-10 16:49:59 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.
+INFO  | 2021-06-10 16:50:11 | [main] app.Driver (Driver.java:173) - Customer bennett logged out.
+INFO  | 2021-06-10 16:50:17 | [main] app.Driver (Driver.java:109) - Customer dan logged in.
+INFO  | 2021-06-10 16:50:24 | [main] services.AccountServicesImpl (AccountServicesImpl.java:85) - Customer dan withdrew $100.00 from account 4.
+INFO  | 2021-06-10 16:50:32 | [main] services.AccountServicesImpl (AccountServicesImpl.java:119) - Customer dan depositted $100.00 into account 4.
+INFO  | 2021-06-10 16:52:16 | [main] app.Driver (Driver.java:109) - Customer dan logged in.
+INFO  | 2021-06-10 16:53:15 | [main] services.AccountServicesImpl (AccountServicesImpl.java:171) - Customer dan transferred $1000.00 from account 5 to account 4.
+INFO  | 2021-06-10 16:53:19 | [main] app.Driver (Driver.java:173) - Customer dan logged out.
+INFO  | 2021-06-10 16:53:24 | [main] app.Driver (Driver.java:109) - Customer bennett logged in.

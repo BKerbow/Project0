@@ -1,5 +1,6 @@
 package dev.kerbow.services;
 
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,6 +29,7 @@ public class AccountServicesImpl implements AccountServices {
 		Driver.printAccounts(CustomerServicesImpl.getInstance().getCustomer());
 		Driver.printMessage("Please enter the account you wish to %s: ", withdraw ? "withdraw from" : "deposit into");
 		info[0] = scanner.next();
+		scanner.nextLine();
 		Driver.printMessage("Amount to " + (withdraw ? "withdrarw: " : "deposit: "), false);
 		info[1] = scanner.next();
 		scanner.nextLine();
@@ -66,7 +68,7 @@ public class AccountServicesImpl implements AccountServices {
 				Driver.printMessage("You cannot withdarw a negative amount.");
 				return false;
 			} else if (amount > account.getBalance()) {
-				Driver.printMessage("You cannot withdraw $%.2f from %d because its balance is only $%.f%n.", 
+				Driver.printMessage("You cannot withdraw $%.2f from %d because its balance is only $%.2f%n.", 
 						amount, account_id, account.getBalance());
 				return false;
 			} else if(account.isPending()) {
@@ -113,7 +115,7 @@ public class AccountServicesImpl implements AccountServices {
 				account.setBalance(account.getBalance() + amount);
 				update(account, true);
 				TransactionServicesImpl.getInstance().add(new Transactions(account, "deposit", amount));
-				Driver.printMessage("You have deposited $%.2f into account %d.%n%n.", CustomerServicesImpl.getInstance().getCustomer().getUsername(), amount, account_id);
+				Driver.printMessage("You have deposited $%.2f into account %d.%n%n.", amount, account_id);
 				Driver.logger.info(String.format("Customer %s depositted $%.2f into account %d.", CustomerServicesImpl.getInstance().getCustomer().getUsername(), amount, account_id));
 				return true;
 			}
@@ -180,6 +182,7 @@ public class AccountServicesImpl implements AccountServices {
 	public void apply(Scanner scanner) {
 		Driver.printMessage("Please enter a starting balance: ");
 		Float amount = scanner.nextFloat();
+		scanner.nextLine();
 		
 		if (amount < 0) {
 			Driver.printMessage("You cannot create an account with a negative balance");
@@ -188,10 +191,14 @@ public class AccountServicesImpl implements AccountServices {
 		
 		Accounts a = new Accounts(amount);
 		a.setCustomer_id(CustomerServicesImpl.getInstance().getCustomer().getId());
-		if(!CustomerServicesImpl.getInstance().getCustomer().isEmployee()) 		a.setPending(true);
+		a.setPending(!CustomerServicesImpl.getInstance().getCustomer().isEmployee());
 		AccountRepository.getInstance().add(a);
-		CustomerServicesImpl.getInstance().updateCustomer();
-		Driver.printMessage("Your new account with balance $%.2f has been created and is pending approval. It must be approved before it can be used.%n", amount);
+		CustomerServicesImpl.getInstance().getCustomer().addAccount(a);
+		if (CustomerServicesImpl.getInstance().getCustomer().isEmployee()) {
+			Driver.printMessage("Your new account with balance %s has been created.", NumberFormat.getCurrencyInstance().format(amount));
+		} else {
+			Driver.printMessage("Your new account with balance %s has been created and is pending approval. It must be approved before it can be used.%n", NumberFormat.getCurrencyInstance().format(amount));
+		}
 	}
 	
 	@Override
